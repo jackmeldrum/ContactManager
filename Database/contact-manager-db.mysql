@@ -1,0 +1,23 @@
+CREATE TABLE users (
+	user_id INT(9) NOT NULL AUTO_INCREMENT,
+  username VARCHAR(20) NOT NULL,
+  password VARCHAR(20) NOT NULL,
+  date_joined DATE,
+  PRIMARY KEY (user_id)) ENGINE = InnoDB, CHARSET = utf8mb4;
+    
+CREATE TABLE contacts (
+	contact_id INT(9) NOT NULL AUTO_INCREMENT,
+  first_name VARCHAR(50) NOT NULL,
+  last_name VARCHAR(50) NOT NULL,
+  email VARCHAR(50),
+  phone_number VARCHAR(11),
+	city VARCHAR(50),
+  state VARCHAR(50),
+  address VARCHAR(50),
+  user_id INT(9),
+  date_added DATE,
+  PRIMARY KEY(contact_id),
+  FOREIGN KEY(user_id) REFERENCES users(user_id)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE
+  )ENGINE = InnoDB, CHARSET = utf8mb4;

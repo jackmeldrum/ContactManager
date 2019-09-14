@@ -2,7 +2,6 @@ import java.sql.*;
 
 class MySqlCon
 {
-
 	public static void main(String args[])
 	{
 		try
